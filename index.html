@@ -17,7 +17,7 @@
             <div class="slider-wrapper" tabindex="0">
 
                 <div class="item">
-                    <img :src="carouselItems[currentIitem].image" alt="Spiderman" />
+                    <img :src="carouselItems[currentIitem].image" :alt="carouselItems[currentIitem].alt" />
                     <div class="text">
                         <h3>{{carouselItems[currentIitem].title}}</h3>
                         <p> {{carouselItems[currentIitem].text}} </p>
@@ -29,7 +29,11 @@
                     <div class="prev" @click="changeImage('prev')"></div>
                     <div class="next" @click="changeImage('next')"></div>
 
-                    <div class="thumb active">
+                    <div v-for="(item, index) in carouselItems" class="thumb">
+                        <img :src="carouselItems[index].image" :alt="carouselItems[index].alt" />
+                    </div>
+
+                    <!-- <div class="thumb active">
                         <img src="img/01.webp" alt="Svezia" />
                     </div>
                     <div class="thumb">
@@ -43,8 +47,8 @@
                     </div>
                     <div class="thumb">
                         <img src="img/05.webp" alt="Avengers" />
-                    </div>
-                    
+                    </div> -->
+
                 </div>
 
             </div>
