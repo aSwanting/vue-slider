@@ -55,7 +55,8 @@
     opacity: 1;
 }
 
-.prev, .next {
+.prev,
+.next {
     width: 20px;
     height: 20px;
     margin: 10px 0;
@@ -103,3 +104,4 @@ oppure i caratteri ∧ (&and;) e ∨ (&or;)
     left: 50%;
     transform: translate(-50%) rotate(135deg);
 }
+
