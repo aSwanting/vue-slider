@@ -13,8 +13,7 @@ html {
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 30px;
+    padding: 50px;
 }
 
 /* .item {
@@ -142,9 +141,10 @@ oppure i caratteri ∧ (&and;) e ∨ (&or;)
 .item {
     position: relative;
     height: 600px;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
     border-radius: 20px;
     overflow: hidden;
+    flex-shrink: 0;
 }
 
 .item img {
@@ -170,7 +170,6 @@ oppure i caratteri ∧ (&and;) e ∨ (&or;)
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
-
 }
 
 .thumb {
@@ -251,4 +250,13 @@ oppure i caratteri ∧ (&and;) e ∨ (&or;)
 
 #thumb-4 {
     object-position: 50% 50%;
+}
+
+
+::-webkit-scrollbar {
+    background-color: rgba(241, 241, 241, 0.918);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(177, 177, 177, 0.856);
 }
