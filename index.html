@@ -29,25 +29,12 @@
                     <div class="prev" @click="changeImage('prev')"></div>
                     <div class="next" @click="changeImage('next')"></div>
 
-                    <div v-for="(item, index) in carouselItems" class="thumb">
-                        <img :src="carouselItems[index].image" :alt="carouselItems[index].alt" />
-                    </div>
+                    <div v-for="(item, index) in carouselItems" class="thumb"
+                        :class="currentIitem === index ? 'active' : '' " @click="changeImage('thumb', index)">
 
-                    <!-- <div class="thumb active">
-                        <img src="img/01.webp" alt="Svezia" />
+                        <img :src="carouselItems[index].image" :alt="carouselItems[index].alt" />
+
                     </div>
-                    <div class="thumb">
-                        <img src="img/02.webp" alt="Ratchet & Clank" />
-                    </div>
-                    <div class="thumb">
-                        <img src="img/03.webp" alt="Fortnite" />
-                    </div>
-                    <div class="thumb">
-                        <img src="img/04.webp" alt="Stray" />
-                    </div>
-                    <div class="thumb">
-                        <img src="img/05.webp" alt="Avengers" />
-                    </div> -->
 
                 </div>
 
