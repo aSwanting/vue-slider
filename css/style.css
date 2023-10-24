@@ -4,22 +4,28 @@
     box-sizing: border-box;
 }
 
+html {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.623);
+}
+
 .container {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 30px;
 }
 
-.item {
+/* .item {
     float: left;
     width: 700px;
-    height: 300px;
+    height: 700px;
     position: relative;
 }
 
 .item img {
-    width: 100%;
+    max-width: 100%;
     height: 100%;
     object-fit: cover;
 }
@@ -30,16 +36,16 @@
     bottom: 20px;
     text-align: right;
     color: white;
-}
+} */
 
-.thumbs {
+/* .thumbs {
     float: left;
     height: 300px;
     background: #000;
     position: relative;
-}
+} */
 
-.thumb {
+/* .thumb {
     height: calc((300px) / 5);
     opacity: 0.5;
 }
@@ -53,24 +59,38 @@
 .thumb.active {
     border: 2px solid #ccc;
     opacity: 1;
-}
+} */
 
 .prev,
 .next {
-    width: 20px;
-    height: 20px;
-    margin: 10px 0;
+    width: 30px;
+    aspect-ratio: 1;
     border-radius: 50%;
-    background: #ccc;
+    background: rgba(255, 255, 255, 0.7);
     position: absolute;
-    left: 50%;
-    transform: translate(-50%);
+    top: 50%;
+    transform: translateY(-50%);
     cursor: pointer;
     z-index: 999;
+    bottom: 0;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.438);
+    transition: 200ms all;
+}
+
+.prev {
+    left: 20px;
+    bottom: 0;
 }
 
 .next {
+    right: 20px;
     bottom: 0;
+}
+
+.prev:hover,
+.next:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-50%) scale(110%);
 }
 
 /*
@@ -79,29 +99,156 @@ usando 2 bordi di un quadratino ruotato di 45 gradi
 In una versione base si possono usare delle icone
 oppure i caratteri ∧ (&and;) e ∨ (&or;)
  */
+
 .prev::after {
+    color: rgba(83, 83, 83, 1);
     content: '';
     width: 10px;
     height: 10px;
-    border-top: 1px solid black;
-    border-right: 1px solid black;
+    border-top: 3px solid;
+    border-right: 3px solid;
     display: block;
     position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%) rotate(-45deg);
+    top: 30%;
+    left: 52%;
+    transform: translate(-50%) rotate(-135deg);
 }
 
 .next::before {
+    color: rgba(83, 83, 83, 1);
     content: '';
     width: 10px;
     height: 10px;
-    border-top: 1px solid black;
-    border-right: 1px solid black;
+    border-top: 3px solid;
+    border-right: 3px solid;
     display: block;
     position: absolute;
-    bottom: 35%;
-    left: 50%;
-    transform: translate(-50%) rotate(135deg);
+    bottom: 28%;
+    left: 40%;
+    transform: translate(-50%) rotate(45deg);
 }
 
+
+/* CUSTOM STYLE */
+
+
+.slider-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.item {
+    position: relative;
+    height: 600px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.item .text {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    padding: 20px;
+    text-align: right;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.178);
+    backdrop-filter: blur(10px);
+}
+
+.thumbs {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+
+}
+
+.thumb {
+    overflow: hidden;
+    width: 20%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    transition: 300ms all;
+    max-width: 120px;
+    cursor: pointer;
+    border: 2px solid #11855ca8;
+    flex-shrink: 0;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: blur(2px);
+}
+
+.thumb:hover {
+    border: 5px solid #61cace;
+}
+
+.thumb.active {
+    border: 5px solid #77ce61;
+}
+
+.thumb.active img {
+    filter: blur(0px);
+}
+
+.item,
+.thumb {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.404);
+}
+
+/* Indivual img positions */
+#item-0 {
+    object-position: 50% 32%;
+}
+
+#item-1 {
+    object-position: 50% 38%;
+}
+
+#item-2 {
+    object-position: 100% 50%;
+}
+
+#item-3 {
+    object-position: 100% 50%;
+}
+
+#item-4 {
+    object-position: 50% 55%;
+}
+
+
+/* Indivual thumbnail positions */
+#thumb-0 {
+    object-position: 50% 50%;
+}
+
+#thumb-1 {
+    object-position: 50% 50%;
+}
+
+#thumb-2 {
+    object-position: 80% 50%;
+}
+
+#thumb-3 {
+    object-position: 95% 50%;
+}
+
+#thumb-4 {
+    object-position: 50% 50%;
+}
