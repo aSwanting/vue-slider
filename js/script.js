@@ -21,14 +21,20 @@ createApp({
             // Perdonami Donato
             if (clicked === 'prev') { this.currentIitem > 0 ? this.currentIitem-- : this.currentIitem = this.carouselItems.length - 1 }
             if (clicked === 'next') { this.currentIitem < this.carouselItems.length - 1 ? this.currentIitem++ : this.currentIitem = 0 }
-            if (clicked === 'thumb') { this.currentIitem  = thumbIndex }
+            if (clicked === 'thumb') { this.currentIitem = thumbIndex }
 
         }
     },
 
     // LifeCycle Functions
     created() {
-        console.log(this.carouselItems[1].image)
+
+        setInterval(() => {
+
+            this.changeImage('next')
+
+        }, 3 * 1000);
+
     }
 
 }).mount('#app')
