@@ -42,7 +42,7 @@ createApp({
     },
 
     // LifeCycle Functions
-    created() {
+    mounted() {
 
         this.startAutoplay()
 
